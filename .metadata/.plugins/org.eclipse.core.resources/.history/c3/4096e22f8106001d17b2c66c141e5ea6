@@ -1,0 +1,83 @@
+package com.declan.functionalcode;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+
+public class MainGUITest {
+
+	WebDriver driver;
+	String BaseURL = "https://www.thetrainline.com/";
+	Actions action;
+	String chromeDriverLocation = "/Users/declanbarrett/Documents/Eclipse Projects/Selenium/Train Booking Tester/TrainBooking/src/test/resources/drivers/chromedriver";
+	
+	@BeforeTest
+	public void openBrowser() {
+		//System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
+		//driver = new ChromeDriver();
+		driver = new SafariDriver();
+		
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.get(BaseURL);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	}
+	
+	@Test(priority=1)
+	public void Test001_ClickCookie() throws InterruptedException {
+		WebElement cookieAccept = driver.findElement(By.id("onetrust-accept-btn-handler"));
+		cookieAccept.click();
+		Thread.sleep(3000);
+		
+	}
+	
+	@Test(priority=2)
+	public void InputTrainStationDetails() throws InterruptedException {
+		//Initialising all elements
+		WebElement fromStationInput = driver.findElement(By.xpath("//input[@placeholder=\"Enter origin station...\"]"));
+		WebElement toStationInput = driver.findElement(By.xpath("//input[@placeholder='Enter destination station...']"));
+		
+		fromStationInput.sendKeys("Bexley");
+		toStationInput.sendKeys("Sidcup");
+		toStationInput.sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		
+		
+	}
+	
+	@Test(priority=3)
+	public void changeDateofTrains() throws InterruptedException {
+	
+		WebElement fromDateInput = driver.findElement(By.xpath("//input[@value=\"18-Jul-22\"]"));
+		
+		
+		fromDateInput.sendKeys(Keys.CLEAR);
+		for(int i=0; i>9;i++) {
+			fromDateInput.sendKeys(Keys.BACK_SPACE);
+		}
+		Thread.sleep(1000);
+		//fromDateInput.sendKeys("23-Jul-22");
+		//fromDateInput.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+	}
+	
+	// @Test(priority=4)
+	public void changeTimeOfTrain() {
+			WebElement hourOfTrain = driver.findElement(By.name("hours"));
+			WebElement minuteOfTrain = driver.findElement(By.name("minutes"));
+	}
+	@AfterTest
+	public void quitBrowser() {
+		driver.quit();
+	}
+	
+}

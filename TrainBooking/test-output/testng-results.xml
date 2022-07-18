@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-07-18T11:21:31 BST" name="Suite" finished-at="2022-07-18T11:21:43 BST" duration-ms="12032">
+    <groups>
+    </groups>
+    <test started-at="2022-07-18T11:21:31 BST" name="Test" finished-at="2022-07-18T11:21:43 BST" duration-ms="12032">
+      <class name="com.declan.testscripts.MainGUITest">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.declan.testscripts.MainGUITest@942a29c]" started-at="2022-07-18T11:21:31 BST" name="openBrowser" finished-at="2022-07-18T11:21:35 BST" duration-ms="4418" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method signature="Test001_ClickCookie()[pri:1, instance:com.declan.testscripts.MainGUITest@942a29c]" started-at="2022-07-18T11:21:36 BST" name="Test001_ClickCookie" finished-at="2022-07-18T11:21:36 BST" duration-ms="106" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test001_ClickCookie -->
+        <test-method signature="InputTrainStationDetails()[pri:2, instance:com.declan.testscripts.MainGUITest@942a29c]" started-at="2022-07-18T11:21:36 BST" name="InputTrainStationDetails" finished-at="2022-07-18T11:21:36 BST" duration-ms="700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InputTrainStationDetails -->
+        <test-method signature="changeDateofTrains()[pri:3, instance:com.declan.testscripts.MainGUITest@942a29c]" started-at="2022-07-18T11:21:36 BST" name="changeDateofTrains" finished-at="2022-07-18T11:21:39 BST" duration-ms="3072" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeDateofTrains -->
+        <test-method signature="changeTimeOfTrain()[pri:4, instance:com.declan.testscripts.MainGUITest@942a29c]" started-at="2022-07-18T11:21:39 BST" name="changeTimeOfTrain" finished-at="2022-07-18T11:21:43 BST" duration-ms="3146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeTimeOfTrain -->
+        <test-method signature="searchTickets()[pri:5, instance:com.declan.testscripts.MainGUITest@942a29c]" started-at="2022-07-18T11:21:43 BST" name="searchTickets" finished-at="2022-07-18T11:21:43 BST" duration-ms="78" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchTickets -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:com.declan.testscripts.MainGUITest@942a29c]" started-at="2022-07-18T11:21:43 BST" name="quitBrowser" finished-at="2022-07-18T11:21:43 BST" duration-ms="377" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+      </class> <!-- com.declan.testscripts.MainGUITest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
