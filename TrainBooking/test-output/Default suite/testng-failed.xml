@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.declan.functionalcode.MainGUITest">
+      <class name="com.declan.testscripts.quicktest">
         <methods>
+          <include name="Test001_ClickCookie" invocation-numbers="2"/>
           <include name="openBrowser"/>
-          <include name="quitBrowser"/>
-          <include name="searchTickets"/>
         </methods>
-      </class> <!-- com.declan.functionalcode.MainGUITest -->
+      </class> <!-- com.declan.testscripts.quicktest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

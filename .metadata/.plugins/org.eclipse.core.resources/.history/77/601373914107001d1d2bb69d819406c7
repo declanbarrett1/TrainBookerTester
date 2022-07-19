@@ -1,0 +1,50 @@
+package com.declan.functionalcode;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadingExcelFile {
+
+	XSSFWorkbook work_book;
+	XSSFSheet sheet;
+	String path = null;
+	XSSFRow row;
+	public ReadingExcelFile(String excelfilePath) {
+	try {
+	File s = new File(excelfilePath);
+	FileInputStream stream = new FileInputStream(s);
+	work_book = new XSSFWorkbook(stream);
+	}
+	catch(Exception e) {
+	System.out.println(e.getMessage());
+	this.path = excelfilePath;
+	
+	}
+	}
+	
+	
+	public String getData(int sheetnumber, int row, int column){
+	sheet = work_book.getSheetAt(sheetnumber);
+	String data = sheet.getRow(row).getCell(column).getStringCellValue();
+	return data;
+	} 
+	
+	public int getCellCount(String sheetName, int rownum) throws IOException{
+		sheet = work_book.getSheet(sheetName);
+		row = sheet.getRow(rownum);
+		int cellCount = row.getLastCellNum();
+		return cellCount;
+	}
+	
+	
+	public int getRowCount(int sheetIndex){
+	int row = work_book.getSheetAt(sheetIndex).getLastRowNum();
+	row = row + 1;
+	return row;
+	}
+}
