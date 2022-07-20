@@ -1,0 +1,14 @@
+package com.declan.functionalcode;
+
+import java.io.IOException;
+
+public class Test2 {
+	public static void main(String[] args) throws IOException {
+		StoringExcelData excelData = new StoringExcelData("/Users/declanbarrett/Documents/Eclipse Projects/Selenium/Train Booking Tester/TrainBooking/src/test/resources/data/data.xlsx");
+		excelData.collectingData();
+		excelData.DestinationData();
+		excelData.DateData();
+		excelData.TimeData();
+		excelData.TestNumData();
+	}
+}

@@ -1,0 +1,21 @@
+package com.declan.testscripts;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+public class ReturnTrainTicketTest {
+	
+	@Test(priority=3)
+	public void changeDateofTrains() throws InterruptedException {
+	
+		WebElement fromDateInput = driver.findElement(By.xpath("//input[@value=\"20-Jul-22\"]"));
+		
+		
+		fromDateInput.sendKeys(Keys.CLEAR);
+		
+		fromDateInput.sendKeys("22-Jul-2022");
+		fromDateInput.sendKeys(Keys.ENTER);
+		Thread.sleep(2000);
+}

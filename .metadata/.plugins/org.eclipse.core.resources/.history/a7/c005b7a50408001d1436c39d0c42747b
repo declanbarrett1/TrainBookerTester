@@ -1,0 +1,42 @@
+package com.declan.functionalcode;
+
+import java.io.IOException;
+
+public class StoringExcelData {
+
+	String Path;
+	int numOfRows;
+	int numOfColumns;
+	public String[][] searchData;
+	ReadingExcelFile excelFile;
+	StoringExcelData(String path) throws IOException{
+		this.Path = path;
+		this.excelFile = new ReadingExcelFile(path);
+		this.numOfRows = excelFile.getRowCount(0);
+		this.numOfColumns = excelFile.getCellCount("Sheet1", numOfRows-1);
+		
+	}
+	
+	public void collectingData() {
+		this.searchData = new String [numOfRows][numOfColumns];
+		
+		for(int row = 1; row <= numOfRows; row++) {
+			
+			for(int col=0; col < numOfColumns;col++) {
+				this.searchData[row-1][col] = excelFile.getData("Sheet1", row, col);
+			}
+		
+	}
+	}
+	public void DestinationData() {
+		String[][] destinationData = new String[numOfRows][2];
+		
+		for(int row=1;row<numOfRows;row++) {
+			for(int col=0; col<=2;col++) {
+				destinationData[row-1][col] = searchData[row][col];
+			}
+		}
+		System.out.println(destinationData[0][0]);
+		
+	}
+}

@@ -1,0 +1,45 @@
+package com.declan.testscripts;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class test {
+
+	WebDriver driver;
+	String BaseURL = "https://www.thetrainline.com/";
+	Actions action;
+	String chromeDriverLocation = "/Users/declanbarrett/Documents/Eclipse Projects/Selenium/Train Booking Tester/TrainBooking/src/test/resources/drivers/chromedriver";
+	
+	public void changeTimeOfLeavingTrain() throws InterruptedException {
+	driver = new SafariDriver();
+		
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.get(BaseURL);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		WebElement cookieAccept = driver.findElement(By.id("onetrust-accept-btn-handler"));
+		cookieAccept.click();
+		List<WebElement> hours = driver.findElements(By.name("hours"));
+			WebElement hoursLeaving = hours.get(0);
+			Select minutesLeaving =new Select(driver.findElement(By.name("minutes")));
+			hoursLeaving.sendKeys("12");
+			minutesLeaving.selectByVisibleText("45");
+			
+			Thread.sleep(3000);
+	
+			WebElement hoursReturning = hours.get(1);
+			Select minutesReturning =new Select(driver.findElement(By.id("3ec1a1ac-2f79-40b6-9afb-9872df824fd3")));
+			hoursReturning.sendKeys("14");
+			minutesReturning.selectByVisibleText("15");
+			
+			Thread.sleep(3000);
+	}
+//	
+}

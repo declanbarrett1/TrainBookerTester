@@ -1,0 +1,38 @@
+package com.declan.functionalcode;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+
+public class Test2 {
+	public static void main(String[] args) throws IOException {
+		StoringExcelData excelData = new StoringExcelData("/Users/declanbarrett/Documents/Eclipse Projects/Selenium/Train Booking Tester/TrainBooking/src/test/resources/data/data.xlsx");
+		excelData.collectingData();
+		excelData.DestinationData();
+		excelData.DateData();
+		excelData.TimeData();
+		excelData.TestNumData();
+	}
+	
+	public String [][] getDestData() throws IOException{
+		StoringExcelData excelData = new StoringExcelData("/Users/declanbarrett/Documents/Eclipse Projects/Selenium/Train Booking Tester/TrainBooking/src/test/resources/data/data.xlsx");
+		String data[][] = excelData.DestinationData();
+		return data;
+	}
+	public String [][] getDateData() throws IOException{
+		StoringExcelData excelData = new StoringExcelData("/Users/declanbarrett/Documents/Eclipse Projects/Selenium/Train Booking Tester/TrainBooking/src/test/resources/data/data.xlsx");
+		String data[][] = excelData.DateData();
+		return data;
+	}
+	public String [][] getTimeData() throws IOException{
+		StoringExcelData excelData = new StoringExcelData("/Users/declanbarrett/Documents/Eclipse Projects/Selenium/Train Booking Tester/TrainBooking/src/test/resources/data/data.xlsx");
+		String data[][] = excelData.TimeData();
+		return data;
+	}
+
+	public String [][] getTestNumData() throws IOException{
+		StoringExcelData excelData = new StoringExcelData("/Users/declanbarrett/Documents/Eclipse Projects/Selenium/Train Booking Tester/TrainBooking/src/test/resources/data/data.xlsx");
+		String data[][] = excelData.TestNumData();
+		return data;
+}
+}
